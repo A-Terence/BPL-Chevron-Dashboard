@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "1638633764513759200",
+    "regNo": "KTU474XX",
+    "transporter": "Chevron Nigeria",
+    "assetName": "COASTER BUS_2018-KTU474XX-LEKKI",
+    "make": "Toyota",
+    "model": "COASTER",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:10Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 13
+  },
+  {
+    "id": "1634670205672288300",
+    "regNo": "EKY40YJ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "COASTER BUS_2023-EKY40YJ-LEKKI",
+    "make": "Toyota",
+    "model": "COASTER",
+    "status": "Idle",
+    "date": "2026-01-27T14:29:08Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.438511647284031,
+      "longitude": 3.5216928273439407,
+      "speed": 0.062,
+      "heading": 82,
+      "address": "Unknown"
+    },
+    "activeEvents": 8
+  },
+  {
+    "id": "1634669822398095400",
+    "regNo": "EKY47YJ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "COASTER BUS_2023-EKY47YJ-LEKKI",
+    "make": "Toyota",
+    "model": "COASTER",
+    "status": "Moving",
+    "date": "2026-01-27T14:29:28Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.4352356642484665,
+      "longitude": 3.4440517611801624,
+      "speed": 52.95,
+      "heading": 93,
+      "address": "Ozumba Mbadiwe Rd, Eti-Osa, Nigeria"
+    },
+    "activeEvents": 2
+  },
+  {
+    "id": "1662628600422830000",
+    "regNo": "FZE16AK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "COASTER BUS_2024-FZE16AK-WARRI",
+    "make": "Toyota",
+    "model": "COASTER",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:11Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 7
+  },
+  {
+    "id": "1638306938321821700",
+    "regNo": "KTU472XX",
+    "transporter": "Chevron Nigeria",
+    "assetName": "COASTER_2018-KTU472XX-LEKKI",
+    "make": "Toyota",
+    "model": "COASTER",
+    "status": "Parked",
+    "date": "2026-01-27T14:25:49Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 4
+  },
+  {
+    "id": "1638339700384174000",
+    "regNo": "AGL551YK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "Coaster-AGL551YK-ESCRAVOS",
+    "make": "Toyota",
+    "model": "Prado",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:45Z",
+    "panic": true,
+    "position": {
+      "latitude": 5.613046819344163,
+      "longitude": 5.192487593740225,
+      "speed": 0,
+      "heading": 310,
+      "address": "Unknown"
+    },
+    "activeEvents": 37
+  },
+  {
+    "id": "1639353916637151200",
+    "regNo": "MUS70YK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "Coaster-MUS70YK-ESCRAVOS",
+    "make": "Toyota",
+    "model": "COASTER",
+    "status": "Parked",
+    "date": "2026-01-27T14:25:18Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 3
+  },
+  {
+    "id": "1640127465559752700",
+    "regNo": "GGE30XK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "FORD_2010-GGE30XK-LEKKI",
+    "make": "Ford",
+    "model": " F350 TRUCK",
+    "status": "Parked",
+    "date": "2026-01-27T14:22:33Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 13
+  },
+  {
+    "id": "1639706118189559800",
+    "regNo": "LND927GD",
+    "transporter": "Chevron Nigeria",
+    "assetName": "FORTUNER_2019-LND927GD-LEKKI",
+    "make": "Toyota",
+    "model": "FORTUNER SUV",
+    "status": "Parked",
+    "date": "2026-01-27T14:26:50Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.577812759205699,
+      "longitude": 3.0904706474393606,
+      "speed": 0,
+      "heading": 131,
+      "address": "Unknown"
+    },
+    "activeEvents": 3
+  },
+  {
+    "id": "1639704878803386400",
+    "regNo": "EKY793GD",
+    "transporter": "Chevron Nigeria",
+    "assetName": "FORTUNER_2020-EKY793GD-LEKKI",
+    "make": "Toyota",
+    "model": "FORTUNER SUV",
+    "status": "Parked",
+    "date": "2026-01-27T14:19:16Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 4
+  },
+  {
+    "id": "1638648249475498000",
+    "regNo": "LND926GD",
+    "transporter": "Chevron Nigeria",
+    "assetName": "FORTUNER_2020-LND926GD-LEKKI",
+    "make": "Toyota",
+    "model": "FORTUNER",
+    "status": "Parked",
+    "date": "2026-01-27T14:28:29Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.696243435144424,
+      "longitude": 3.341791285201907,
+      "speed": 0,
+      "heading": 19,
+      "address": "Unknown"
+    },
+    "activeEvents": 2
+  },
+  {
+    "id": "1637244632671932400",
+    "regNo": "LND928GD",
+    "transporter": "Chevron Nigeria",
+    "assetName": "FORTUNER_2020-LND928GD-LEKKI",
+    "make": "Toyota",
+    "model": "FORTUNER",
+    "status": "Parked",
+    "date": "2026-01-27T14:21:37Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.6925691440701485,
+      "longitude": 3.3392958249896765,
+      "speed": 0,
+      "heading": 56,
+      "address": "Unknown"
+    },
+    "activeEvents": 1
+  },
+  {
+    "id": "1672802180273479700",
+    "regNo": "BDG798YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HAICE_2025-BDG798YL-WARRI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:23:50Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 11
+  },
+  {
+    "id": "1638259771645288400",
+    "regNo": "AGL489YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2012-AGL489YL-LEKKI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:52Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.578071424737573,
+      "longitude": 3.357966933399439,
+      "speed": 0,
+      "heading": 60,
+      "address": "Unknown"
+    },
+    "activeEvents": 66
+  },
+  {
+    "id": "1637176103016784000",
+    "regNo": "AGL490YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2012-AGL490YL-LEKKI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Idle",
+    "date": "2026-01-27T14:19:14Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.575826499611139,
+      "longitude": 3.3227312564849854,
+      "speed": 4.5,
+      "heading": 33,
+      "address": "Unknown"
+    },
+    "activeEvents": 1
+  },
+  {
+    "id": "1662172055903408000",
+    "regNo": "AKD834FZ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2015-AKD834FZ-WARRI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:04Z",
+    "panic": true,
+    "position": {
+      "latitude": 5.553847951814532,
+      "longitude": 5.730535285547376,
+      "speed": 0,
+      "heading": 199,
+      "address": "Unknown"
+    },
+    "activeEvents": 10
+  },
+  {
+    "id": "1638288405765918700",
+    "regNo": "AKD835FZ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2019-AKD835FZ-LEKKI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Idle",
+    "date": "2026-01-27T14:29:39Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.453790599480271,
+      "longitude": 3.5189804434776306,
+      "speed": 0.037,
+      "heading": 267,
+      "address": "Unknown"
+    },
+    "activeEvents": 20
+  },
+  {
+    "id": "1667374216480018400",
+    "regNo": "FZE17AK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2021-FZE17AK-PH",
+    "make": "Toyota",
+    "model": " HIACE",
+    "status": "Idle",
+    "date": "2026-01-27T14:28:38Z",
+    "panic": true,
+    "position": {
+      "latitude": 4.904267136007547,
+      "longitude": 7.000273419544101,
+      "speed": 0.398,
+      "heading": 178,
+      "address": "Unknown"
+    },
+    "activeEvents": 7
+  },
+  {
+    "id": "1634663532673036300",
+    "regNo": "GGE578GW ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2021-GGE578GW -LEKKI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:26:48Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 6
+  },
+  {
+    "id": "1662936321709006800",
+    "regNo": "LSR848HB",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2021-LSR848HB-LEKKI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:41Z",
+    "panic": true,
+    "position": {
+      "latitude": 5.573292123153806,
+      "longitude": 5.798855256289244,
+      "speed": 0,
+      "heading": 108,
+      "address": "Unknown"
+    },
+    "activeEvents": 11
+  },
+  {
+    "id": "1672380159644115000",
+    "regNo": "AGL492YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2025-AGL492YL-LEKKI",
+    "make": "Toyota",
+    "model": " HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:27:42Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.443194951862097,
+      "longitude": 3.400382464751601,
+      "speed": 0,
+      "heading": 310,
+      "address": "Unknown"
+    },
+    "activeEvents": 4
+  },
+  {
+    "id": "1638692437757853700",
+    "regNo": "BDG801YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2025-BDG801YL-LEKKI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Moving",
+    "date": "2026-01-27T14:27:39Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.462629651650786,
+      "longitude": 3.42681429348886,
+      "speed": 59.49,
+      "heading": 289,
+      "address": "Osborne Rd, Eti-Osa, Nigeria"
+    },
+    "activeEvents": 8
+  },
+  {
+    "id": "1740132536210808800",
+    "regNo": "BDG803YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2025-BDG803YL-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:28:40Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 7
+  },
+  {
+    "id": "1637529728442724400",
+    "regNo": "BDG805YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2025-BDG805YL -LEKKI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:20:06Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 5
+  },
+  {
+    "id": "1662640925176868900",
+    "regNo": "MUS89YK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE_2025-MUS89YK-WARRI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:28:55Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 16
+  },
+  {
+    "id": "1651310341355819000",
+    "regNo": "BDG800YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HIACE-2025-BDG800YL-PH",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Parked",
+    "date": "2026-01-27T14:21:53Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 3
+  },
+  {
+    "id": "1672684315219697700",
+    "regNo": "AGL311EV",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2017-AGL311EV-ABUJA",
+    "make": "Toyota",
+    "model": "HILUX",
+    "status": "Idle",
+    "date": "2026-01-27T14:26:41Z",
+    "panic": true,
+    "position": {
+      "latitude": 9.014127496629953,
+      "longitude": 7.533860262483358,
+      "speed": 0.022,
+      "heading": 90,
+      "address": "Unknown"
+    },
+    "activeEvents": 1
+  },
+  {
+    "id": "1639718845953462300",
+    "regNo": "KJA92XX",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2017-KJA92XX-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Idle",
+    "date": "2026-01-27T14:29:35Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.438558418303728,
+      "longitude": 3.5218749660998583,
+      "speed": 0.215,
+      "heading": 82,
+      "address": "Unknown"
+    },
+    "activeEvents": 30
+  },
+  {
+    "id": "1640093903603486700",
+    "regNo": "AGL523HW",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2021-AGL523HW-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Moving",
+    "date": "2026-01-27T14:29:40Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.435286290943623,
+      "longitude": 3.44471862539649,
+      "speed": 56.884,
+      "heading": 84,
+      "address": "Ozumba Mbadiwe Rd, Eti-Osa, Nigeria"
+    },
+    "activeEvents": 8
+  },
+  {
+    "id": "1663291385175048200",
+    "regNo": "BDG847HN",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2021-BDG847HN-WARRI",
+    "make": "Toyota",
+    "model": "HILUX",
+    "status": "Parked",
+    "date": "2026-01-27T14:24:47Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 7
+  },
+  {
+    "id": "1663287938177351700",
+    "regNo": "BDG848HN",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2021-BDG848HN-WARRI",
+    "make": "Toyota",
+    "model": "HILUX",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:28Z",
+    "panic": true,
+    "position": {
+      "latitude": 5.573353646323085,
+      "longitude": 5.798653922975063,
+      "speed": 0,
+      "heading": 101,
+      "address": "Unknown"
+    },
+    "activeEvents": 7
+  },
+  {
+    "id": "1652751048104464400",
+    "regNo": "BDG395HL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2022-BDG395HL-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:39Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.575531791895628,
+      "longitude": 3.322850950062275,
+      "speed": 0,
+      "heading": 85,
+      "address": "Unknown"
+    },
+    "activeEvents": 9
+  },
+  {
+    "id": "1638638326033252400",
+    "regNo": "SMK831HR",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2022-SMK831HR-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Moving",
+    "date": "2026-01-27T14:27:47Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.436059772968292,
+      "longitude": 3.502843603491783,
+      "speed": 52.443,
+      "heading": 260,
+      "address": "Lekki-Epe Expy, Eti-Osa, Nigeria"
+    },
+    "activeEvents": 11
+  },
+  {
+    "id": "1640093332367028200",
+    "regNo": "SMK832HR",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2022-SMK832HR-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:53Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.4451399724930525,
+      "longitude": 3.530628103762865,
+      "speed": 0,
+      "heading": 208,
+      "address": "Unknown"
+    },
+    "activeEvents": 21
+  },
+  {
+    "id": "1640074939756785700",
+    "regNo": "AKD694HW",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2023-AKD694HW-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:48Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.594321755692363,
+      "longitude": 3.33479180932045,
+      "speed": 0,
+      "heading": 282,
+      "address": "Unknown"
+    },
+    "activeEvents": 136
+  },
+  {
+    "id": "1640086623540031500",
+    "regNo": "MUS413YK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2023-MUS413YK-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Idle",
+    "date": "2026-01-27T14:26:44Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.434105951339006,
+      "longitude": 3.4903609380126,
+      "speed": 5,
+      "heading": 81,
+      "address": "Unknown"
+    },
+    "activeEvents": 8
+  },
+  {
+    "id": "1677482768424063000",
+    "regNo": "AGL486YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2024-AGL486YL-WARRI",
+    "make": "Toyota",
+    "model": "HIACE",
+    "status": "Idle",
+    "date": "2026-01-27T14:28:38Z",
+    "panic": true,
+    "position": {
+      "latitude": 5.539579102769494,
+      "longitude": 5.826080935075879,
+      "speed": 5,
+      "heading": 198,
+      "address": "Unknown"
+    },
+    "activeEvents": 6
+  },
+  {
+    "id": "1662914597745610800",
+    "regNo": "MUS414YK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2024-MUS414YK-WARRI",
+    "make": "Toyota",
+    "model": "Hilux",
+    "status": "Parked",
+    "date": "2026-01-27T14:23:02Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 10
+  },
+  {
+    "id": "1640072368300306400",
+    "regNo": "MUS419YK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2024-MUS419YK-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:35Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.438000937923789,
+      "longitude": 3.4352365974336863,
+      "speed": 0,
+      "heading": 328,
+      "address": "Unknown"
+    },
+    "activeEvents": 90
+  },
+  {
+    "id": "1646624397690200000",
+    "regNo": "MUS421YK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2024-MUS421YK-LEKKI",
+    "make": "Toyota",
+    "model": "HILUX",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:28Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.446027951315045,
+      "longitude": 3.531882790848613,
+      "speed": 0,
+      "heading": 271,
+      "address": "Unknown"
+    },
+    "activeEvents": 6
+  },
+  {
+    "id": "1634671435122131000",
+    "regNo": "BDG679YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2025-BDG679YL-LEKKI",
+    "make": "Toyota",
+    "model": " HILUX",
+    "status": "Parked",
+    "date": "2026-01-27T14:23:55Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.438074447214603,
+      "longitude": 3.435251098126173,
+      "speed": 0,
+      "heading": 9,
+      "address": "Unknown"
+    },
+    "activeEvents": 3
+  },
+  {
+    "id": "1701692887171321900",
+    "regNo": "SMK355YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2025-SMK355YL-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Moving",
+    "date": "2026-01-27T14:29:28Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.4352913200855255,
+      "longitude": 3.44378680922091,
+      "speed": 50.966,
+      "heading": 98,
+      "address": "Ozumba Mbadiwe Rd, Eti-Osa, Nigeria"
+    },
+    "activeEvents": 4
+  },
+  {
+    "id": "1640088224800768000",
+    "regNo": "SMK359YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX_2025-SMK359YL-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA HILUX D/C(D) 4WDR",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:45Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.4385568257421255,
+      "longitude": 3.521750830113888,
+      "speed": 0,
+      "heading": 82,
+      "address": "Unknown"
+    },
+    "activeEvents": 27
+  },
+  {
+    "id": "1738336614422970400",
+    "regNo": "BDG681YL",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX-2025-BDG681YL-LEKKI",
+    "make": "Toyota",
+    "model": "HILUX",
+    "status": "Moving",
+    "date": "2026-01-27T14:29:09Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.431832276284695,
+      "longitude": 3.4591826051473618,
+      "speed": 61.199,
+      "heading": 140,
+      "address": "Eti-Osa, Nigeria"
+    },
+    "activeEvents": 9
+  },
+  {
+    "id": "1663662388006551600",
+    "regNo": "GGE276XS",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX-GGE276XS-WARRI",
+    "make": "Toyota",
+    "model": "HILUX",
+    "status": "Parked",
+    "date": "2026-01-27T14:23:25Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 4
+  },
+  {
+    "id": "1662920734630961200",
+    "regNo": "MUS417YK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "HILUX-MUS417YK-WARRI",
+    "make": "Toyota",
+    "model": "HILUX",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:42Z",
+    "panic": true,
+    "position": {
+      "latitude": 5.559203485026956,
+      "longitude": 5.73144631460309,
+      "speed": 0,
+      "heading": 272,
+      "address": "Unknown"
+    },
+    "activeEvents": 7
+  },
+  {
+    "id": "1639054667396554800",
+    "regNo": "JJJ698AE",
+    "transporter": "Chevron Nigeria",
+    "assetName": "LAND CRUISER_2012-JJJ698AE-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO ",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:48Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.6133759170770645,
+      "longitude": 3.576032957062125,
+      "speed": 0,
+      "heading": 96,
+      "address": "Unknown"
+    },
+    "activeEvents": 4
+  },
+  {
+    "id": "1656815544978215000",
+    "regNo": "AKD841FZ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "LAND CRUISER_2020-AKD841FZ-ABUJA",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:09Z",
+    "panic": true,
+    "position": {
+      "latitude": 9.005287773907185,
+      "longitude": 7.270407322794199,
+      "speed": 0,
+      "heading": 159,
+      "address": "Unknown"
+    },
+    "activeEvents": 14
+  },
+  {
+    "id": "1672354859468169200",
+    "regNo": "LNG588GZ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "LAND CRUISER_2021-LND588GZ-ABUJA",
+    "make": "Toyota",
+    "model": "LAND CRUISER",
+    "status": "Parked",
+    "date": "2026-01-27T14:24:23Z",
+    "panic": true,
+    "position": {
+      "latitude": 9.066487150266767,
+      "longitude": 7.507232800126076,
+      "speed": 0,
+      "heading": 61,
+      "address": "Unknown"
+    },
+    "activeEvents": 8
+  },
+  {
+    "id": "1639428834120753200",
+    "regNo": "AKD467FJ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "LAND CRUISER_2022-AKD467FJ-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO VX-L",
+    "status": "Parked",
+    "date": "2026-01-27T14:28:58Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.441816966980696,
+      "longitude": 3.5314366221427917,
+      "speed": 0,
+      "heading": 248,
+      "address": "Unknown"
+    },
+    "activeEvents": 1
+  },
+  {
+    "id": "1639419567951110100",
+    "regNo": "APP276HV",
+    "transporter": "Chevron Nigeria",
+    "assetName": "LAND CRUISER_2022-APP276HV-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO  VX-L",
+    "status": "Parked",
+    "date": "2026-01-27T14:27:38Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.443213643506169,
+      "longitude": 3.5314062796533108,
+      "speed": 0,
+      "heading": 269,
+      "address": "Unknown"
+    },
+    "activeEvents": 4
+  },
+  {
+    "id": "1639707642530955300",
+    "regNo": "EPE468KE",
+    "transporter": "Chevron Nigeria",
+    "assetName": "LAND CRUISER_2025-EPE468KE-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:52Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.446074806153774,
+      "longitude": 3.5314868297427893,
+      "speed": 0,
+      "heading": 289,
+      "address": "Unknown"
+    },
+    "activeEvents": 9
+  },
+  {
+    "id": "1653478990416478200",
+    "regNo": "KRD881KE",
+    "transporter": "Chevron Nigeria",
+    "assetName": "LANDCRUISER-2025--KRD881KE-LEKKI",
+    "make": "Toyota",
+    "model": "LANDCRUISER ",
+    "status": "Parked",
+    "date": "2026-01-27T14:22:39Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.437321584671736,
+      "longitude": 3.4352159779518843,
+      "speed": 0,
+      "heading": 280,
+      "address": "Unknown"
+    },
+    "activeEvents": 3
+  },
+  {
+    "id": "1658636883160010800",
+    "regNo": "GGE783KE",
+    "transporter": "Chevron Nigeria",
+    "assetName": "LANDCRUISER-2025-GGE783KE_2011-SMK732CP-LEKKI",
+    "make": "Toyota",
+    "model": "TOYOTA LANDCRUISER",
+    "status": "Moving",
+    "date": "2026-01-27T14:23:06Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.437462652102113,
+      "longitude": 3.4353531058877707,
+      "speed": 5.5,
+      "heading": 69,
+      "address": "Unknown"
+    },
+    "activeEvents": 6
+  },
+  {
+    "id": "1646648003413319700",
+    "regNo": "MUS412YK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "LV-MUS412YK-WARRI",
+    "make": "Toyota",
+    "model": "HILUX",
+    "status": "Parked",
+    "date": "2026-01-27T14:22:45Z",
+    "panic": true,
+    "position": {
+      "latitude": 5.557736484333873,
+      "longitude": 5.730994613841176,
+      "speed": 0,
+      "heading": 4,
+      "address": "Unknown"
+    },
+    "activeEvents": 4
+  },
+  {
+    "id": "1667290006046777300",
+    "regNo": "AGL106CP",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2011-AGL106CP-PH",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:27:06Z",
+    "panic": true,
+    "position": {
+      "latitude": 4.787451485171914,
+      "longitude": 7.039155475795269,
+      "speed": 0,
+      "heading": 76,
+      "address": "Unknown"
+    },
+    "activeEvents": 4
+  },
+  {
+    "id": "1653537467418722300",
+    "regNo": "GGE835CQ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2011-GGE835CQ-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Idle",
+    "date": "2026-01-27T14:24:14Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.6075867880135775,
+      "longitude": 3.3486917708069086,
+      "speed": 5,
+      "heading": 130,
+      "address": "Unknown"
+    },
+    "activeEvents": 2
+  },
+  {
+    "id": "1638671319658537000",
+    "regNo": "MUS855CN",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2011-MUS855CN-LEKKI",
+    "make": "Toyota",
+    "model": " PRADO",
+    "status": "Idle",
+    "date": "2026-01-27T14:28:29Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.445977995172143,
+      "longitude": 3.5312222968786955,
+      "speed": 5,
+      "heading": 51,
+      "address": "Unknown"
+    },
+    "activeEvents": 5
+  },
+  {
+    "id": "1634668987634081800",
+    "regNo": "FST549BG",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2013-FST549BG-LEKKI",
+    "make": "Toyota",
+    "model": "Prado",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:57Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.444012774154544,
+      "longitude": 3.531685983762145,
+      "speed": 0,
+      "heading": 270,
+      "address": "Unknown"
+    },
+    "activeEvents": 32
+  },
+  {
+    "id": "1648445287612305400",
+    "regNo": "LSR605BE",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2013-LSR605BE-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Idle",
+    "date": "2026-01-27T14:29:26Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.594186304137111,
+      "longitude": 3.3346611354500055,
+      "speed": 5,
+      "heading": 222,
+      "address": "Unknown"
+    },
+    "activeEvents": 6
+  },
+  {
+    "id": "1647694670864769000",
+    "regNo": "LSR607BE",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2013-LSR607BE-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:27:42Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.442131623625755,
+      "longitude": 3.530700607225299,
+      "speed": 0,
+      "heading": 178,
+      "address": "Unknown"
+    },
+    "activeEvents": 10
+  },
+  {
+    "id": "1639051747417772000",
+    "regNo": "EKY678CV",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2014-EKY678CV-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO TX-L",
+    "status": "Parked",
+    "date": "2026-01-27T14:22:48Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 6
+  },
+  {
+    "id": "1634670923267629000",
+    "regNo": "APP691EM",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2016-APP691EM-LEKKI",
+    "make": "Toyota",
+    "model": "LANDCRUISER PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:25:35Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.449926290661097,
+      "longitude": 3.5406858008354902,
+      "speed": 0,
+      "heading": 175,
+      "address": "Unknown"
+    },
+    "activeEvents": 2
+  },
+  {
+    "id": "1649263728277774300",
+    "regNo": "AAA786FC",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2018-AAA786FC-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:17Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.446958761662245,
+      "longitude": 3.5391384176909924,
+      "speed": 0,
+      "heading": 78,
+      "address": "Unknown"
+    },
+    "activeEvents": 11
+  },
+  {
+    "id": "1648822335775076400",
+    "regNo": "AAA452GB",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2020-AAA452GB-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:25:52Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 7
+  },
+  {
+    "id": "1672800758960988200",
+    "regNo": "FZE14AK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2021-FZE14AK-ABUJA",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:21:25Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 25
+  },
+  {
+    "id": "1667311203228287000",
+    "regNo": "FZE15AK",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2021-FZE15AK-PH",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Moving",
+    "date": "2026-01-27T14:29:29Z",
+    "panic": true,
+    "position": {
+      "latitude": 4.795809164643288,
+      "longitude": 7.034263294190168,
+      "speed": 52.675,
+      "heading": 292,
+      "address": "Peter Odili Rd, Port Harcourt, Nigeria"
+    },
+    "activeEvents": 6
+  },
+  {
+    "id": "1649129151351914500",
+    "regNo": "APP275HV",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2022-APP275HV-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:30:05Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.437482433393598,
+      "longitude": 3.4354898147284985,
+      "speed": 0,
+      "heading": 192,
+      "address": "Unknown"
+    },
+    "activeEvents": 15
+  },
+  {
+    "id": "1651730792111968300",
+    "regNo": "KSF458JR",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2025-KSF458JR-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:34Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.442022155970335,
+      "longitude": 3.5322542767971754,
+      "speed": 0,
+      "heading": 248,
+      "address": "Unknown"
+    },
+    "activeEvents": 23
+  },
+  {
+    "id": "1646664410356310000",
+    "regNo": "LSD993JU",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2025-LSD993JU-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Idle",
+    "date": "2026-01-27T14:21:17Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.437524259090424,
+      "longitude": 3.4353504236787558,
+      "speed": 0.293,
+      "heading": 274,
+      "address": "Unknown"
+    },
+    "activeEvents": 13
+  },
+  {
+    "id": "1648760268122546200",
+    "regNo": "LSR923JQ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2025-LSR923JQ-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:27Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.438557496294379,
+      "longitude": 3.5220130998641253,
+      "speed": 0,
+      "heading": 87,
+      "address": "Unknown"
+    },
+    "activeEvents": 39
+  },
+  {
+    "id": "1649205212730863600",
+    "regNo": "LSR924JQ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "PRADO_2025-LSR924JQ-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:28:01Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.435748133808374,
+      "longitude": 3.5082468297332525,
+      "speed": 0,
+      "heading": 1,
+      "address": "Unknown"
+    },
+    "activeEvents": 8
+  },
+  {
+    "id": "1646588230353965000",
+    "regNo": "APP396FJ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "RAV4_2018-APP396FJ-LEKKI",
+    "make": "Toyota",
+    "model": "RAV4",
+    "status": "Parked",
+    "date": "2026-01-27T14:27:29Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 6
+  },
+  {
+    "id": "1646976115481051100",
+    "regNo": "KTU270FF",
+    "transporter": "Chevron Nigeria",
+    "assetName": "RAV4_2018-KTU270FF-LEKKI",
+    "make": "Toyota",
+    "model": "RAV4",
+    "status": "Parked",
+    "date": "2026-01-27T14:27:03Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.445856625214219,
+      "longitude": 3.5353024397045374,
+      "speed": 0,
+      "heading": 335,
+      "address": "Unknown"
+    },
+    "activeEvents": 8
+  },
+  {
+    "id": "1648460983883083800",
+    "regNo": "LND829EY",
+    "transporter": "Chevron Nigeria",
+    "assetName": "RAV4_2018-LND829EY-LEKKI",
+    "make": "Toyota",
+    "model": "RAV4",
+    "status": "Parked",
+    "date": "2026-01-27T14:21:55Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.443401146680117,
+      "longitude": 3.5316734947264194,
+      "speed": 0,
+      "heading": 82,
+      "address": "Unknown"
+    },
+    "activeEvents": 9
+  },
+  {
+    "id": "1672801886603165700",
+    "regNo": "MUS744FQ",
+    "transporter": "Chevron Nigeria",
+    "assetName": "RAV4_2019-MUS744FQ-ABUJA",
+    "make": "Toyota",
+    "model": "RAV4",
+    "status": "Moving",
+    "date": "2026-01-27T14:29:18Z",
+    "panic": true,
+    "position": {
+      "latitude": 9.04972979798913,
+      "longitude": 7.50784233212471,
+      "speed": 61.263,
+      "heading": 147,
+      "address": "Shehu Shagari Way, Abuja Municipal, Nigeria"
+    },
+    "activeEvents": 6
+  },
+  {
+    "id": "1638971205774835700",
+    "regNo": "KTU958JR",
+    "transporter": "Chevron Nigeria",
+    "assetName": "RAV4_2022-KTU958JR-LEKKI",
+    "make": "Toyota",
+    "model": "RAV4",
+    "status": "Parked",
+    "date": "2026-01-27T14:28:58Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.44487258978188,
+      "longitude": 3.5308104939758778,
+      "speed": 0,
+      "heading": 123,
+      "address": "Unknown"
+    },
+    "activeEvents": 3
+  },
+  {
+    "id": "1639050007997960200",
+    "regNo": "SMK310HW",
+    "transporter": "Chevron Nigeria",
+    "assetName": "RAV4_2022-SMK310HW-LEKKI",
+    "make": "Toyota",
+    "model": "RAV4",
+    "status": "Parked",
+    "date": "2026-01-27T14:29:30Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.4449273236095905,
+      "longitude": 3.531406447291374,
+      "speed": 0,
+      "heading": 225,
+      "address": "Unknown"
+    },
+    "activeEvents": 10
+  },
+  {
+    "id": "1651657117208920000",
+    "regNo": "KTU262HX",
+    "transporter": "Chevron Nigeria",
+    "assetName": "RAV4_2023-KTU262HX-LEKKI",
+    "make": "Toyota",
+    "model": "PRADO",
+    "status": "Parked",
+    "date": "2026-01-27T14:25:41Z",
+    "panic": true,
+    "position": {
+      "latitude": 6.438409807160497,
+      "longitude": 3.525518998503685,
+      "speed": 0,
+      "heading": 96,
+      "address": "Unknown"
+    },
+    "activeEvents": 13
+  },
+  {
+    "id": "1638972031713267700",
+    "regNo": "KSF459JR",
+    "transporter": "Chevron Nigeria",
+    "assetName": "RAV4-KSF459JR-LEKKI",
+    "make": "Toyota",
+    "model": "RAV4",
+    "status": "Parked",
+    "date": "2026-01-27T14:26:12Z",
+    "panic": true,
+    "position": null,
+    "activeEvents": 3
+  }
+]

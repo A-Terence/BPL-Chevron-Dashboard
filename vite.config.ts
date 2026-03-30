@@ -1,0 +1,132 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { pollOnce, startPolling, clearTriggeredEvent, resetState } from './scripts/mix-test.js'
+import fs from 'fs'
+import path from 'path'
+
+const ACKNOWLEDGED_FILE = path.join(process.cwd(), 'public', 'acknowledged.json')
+const API_SECRET = process.env.API_SECRET
+
+function loadAcknowledged(): string[] {
+  try {
+    if (fs.existsSync(ACKNOWLEDGED_FILE)) {
+      return JSON.parse(fs.readFileSync(ACKNOWLEDGED_FILE, 'utf8'))
+    }
+  } catch {
+    // ignore
+  }
+  return []
+}
+
+function saveAcknowledged(ids: string[]) {
+  fs.writeFileSync(ACKNOWLEDGED_FILE, JSON.stringify(ids, null, 2))
+}
+
+function isAuthorized(req: any): boolean {
+  const secret = req.headers['x-api-secret']
+  return secret === API_SECRET
+}
+
+let pollingStarted = false
+
+export default defineConfig({
+  server: {
+    host: true,
+    allowedHosts: ['drema-heterologous-crysta.ngrok-free.dev'],
+    headers: {
+      'ngrok-skip-browser-warning': 'true',
+    },
+    watch: {
+      ignored: ['**/scripts/mix-test.js', '**/public/data.json', '**/public/metadata.json', '**/public/acknowledged.json'],
+    },
+  },
+  plugins: [
+    react(),
+    {
+      name: 'mix-data-poller',
+      configureServer(server) {
+        if (!pollingStarted) {
+          startPolling({ maxRuns: null })
+          pollingStarted = true
+        }
+
+        // Refresh endpoint
+        server.middlewares.use('/api/refresh', async (req, res) => {
+          if (!isAuthorized(req)) {
+            res.statusCode = 401
+            res.end('Unauthorized')
+            return
+          }
+          if (req.method !== 'POST') {
+            res.statusCode = 405
+            res.end('Method Not Allowed')
+            return
+          }
+          const result = await pollOnce()
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify(result))
+        })
+
+        // Get acknowledged IDs
+        server.middlewares.use('/api/acknowledged', async (req, res) => {
+          if (!isAuthorized(req)) {
+            res.statusCode = 401
+            res.end('Unauthorized')
+            return
+          }
+
+          if (req.method === 'GET') {
+            const ids = loadAcknowledged()
+            res.setHeader('Content-Type', 'application/json')
+            res.end(JSON.stringify(ids))
+            return
+          }
+
+          // Save new acknowledged ID
+          if (req.method === 'POST') {
+            let body = ''
+            req.on('data', (chunk: Buffer) => { body += chunk.toString() })
+            req.on('end', () => {
+              try {
+                const { id } = JSON.parse(body)
+                const ids = loadAcknowledged()
+                if (!ids.includes(id)) {
+                  ids.push(id)
+                  saveAcknowledged(ids)
+                }
+                clearTriggeredEvent(id)
+                res.setHeader('Content-Type', 'application/json')
+                res.end(JSON.stringify({ ok: true }))
+              } catch {
+                res.statusCode = 400
+                res.end('Bad Request')
+              }
+            })
+            return
+          }
+
+          res.statusCode = 405
+          res.end('Method Not Allowed')
+        })
+
+        // Reset endpoint
+        server.middlewares.use('/api/reset', async (req, res) => {
+          if (!isAuthorized(req)) {
+            res.statusCode = 401
+            res.end('Unauthorized')
+            return
+          }
+          if (req.method !== 'POST') {
+            res.statusCode = 405
+            res.end('Method Not Allowed')
+            return
+          }
+          resetState()
+          saveAcknowledged([])
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify({ ok: true }))
+        })
+      },
+    },
+  ],
+})

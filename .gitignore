@@ -47,9 +47,6 @@ temp.js
 scripts/chevron.js
 scripts/panictest
 
-# Client assets
-public/cnl-logo.png
-
 #old code
 all-events.json
 all-vehicles.json

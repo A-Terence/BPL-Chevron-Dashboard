@@ -1038,7 +1038,6 @@ body {
     linear-gradient(180deg, var(--cd-bg-grad-3), transparent 70%);
 }
 
-/* PAGE BACKGROUND (full viewport) */
 .fleet-page{
   min-height: 100vh;
   position: relative;
@@ -1051,7 +1050,6 @@ body {
     linear-gradient(180deg, color-mix(in oklab, var(--cd-bg-grad-3) 55%, transparent), transparent 60%);
 }
 
-/* Subtle texture */
 .fleet-page::before{
   content:"";
   position:absolute;
@@ -1062,13 +1060,11 @@ body {
   background-size: 180px 180px;
 }
 
-/* CONTENT LAYER */
 .fleet-shell{
   position: relative;
   z-index: 1;
 }
 
-/* OPTIONAL: premium glass card */
 .fleet-card{
   border: 1px solid var(--cd-border);
   background: color-mix(in oklab, var(--cd-surface) 86%, transparent);
@@ -1077,7 +1073,6 @@ body {
   border-radius: 18px;
 }
 
-/* OPTIONAL: icon button skin */
 .cd-iconbtn{
   display:inline-flex;
   align-items:center;
@@ -1146,4 +1141,136 @@ body {
 [data-theme="dark"] .metric-grid svg,
 [data-theme="dark"] .metric-grid .text-gray-400{
   color: #ffffff;
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT
+   Desktop (default) → Tablet (≤1024px) → Mobile (≤768px)
+   ============================================================ */
+
+/* Shell padding */
+.cd-shell-padding {
+  padding: 2rem;
+}
+
+/* Header */
+.cd-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cd-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.cd-title {
+  font-size: 1.5rem;
+}
+
+.cd-subtitle {
+  font-size: 1rem;
+}
+
+/* Stats wrapper — desktop: padded card, mobile: no padding (scroll handles it) */
+.cd-stats-wrapper {
+  padding: 20px 24px;
+}
+
+/* Stats scroll container — desktop: flex wrap, mobile: horizontal scroll */
+.cd-stats-scroll {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Individual stat button */
+.cd-stat-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 16px 12px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .cd-shell-padding {
+    padding: 1.5rem;
+  }
+
+  .cd-title {
+    font-size: 1.25rem;
+  }
+
+  .cd-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .cd-stat-btn {
+    min-width: 70px;
+    padding: 14px 10px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .cd-shell-padding {
+    padding: 1rem;
+  }
+
+  .cd-header {
+    align-items: center;
+  }
+
+  .cd-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cd-title {
+    font-size: 1.05rem;
+  }
+
+  .cd-subtitle {
+    display: none;
+  }
+
+  .cd-stats-wrapper {
+    padding: 12px;
+}
+  
+
+  .cd-stats-scroll {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .cd-stats-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cd-stat-btn {
+    flex: 0 0 auto;
+    min-width: 64px;
+    padding: 10px 8px;
+    border-radius: 8px;
+  }
+
+  .cd-stat-btn div:first-child {
+    font-size: 20px !important;
+  }
+
+  .cd-stat-btn div:last-child {
+    font-size: 9px !important;
+    margin-top: 4px !important;
+  }
 }

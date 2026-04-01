@@ -33,9 +33,17 @@ export default function FleetAnomalies({ statusFilter, onFilterChange, authFetch
   const [refreshing, setRefreshing] = useState(false);
   const [refreshError, setRefreshError] = useState<string | null>(null);
   const [isStale, setIsStale] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const acknowledgedIds = useRef<Set<string>>(new Set());
   const repeatIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const anomaliesRef = useRef<Anomaly[]>([]);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     anomaliesRef.current = anomalies;
@@ -76,7 +84,6 @@ export default function FleetAnomalies({ statusFilter, onFilterChange, authFetch
     }
   };
 
-  // Check metadata for stale data
   useEffect(() => {
     const checkStale = async () => {
       try {
@@ -259,51 +266,59 @@ export default function FleetAnomalies({ statusFilter, onFilterChange, authFetch
           </div>
         )}
 
+        {/* Panic Banner */}
         {panicCount > 0 && (
-          <div style={{ backgroundColor: 'var(--cd-danger-bg)', border: '1px solid var(--cd-danger-border)', borderRadius: '8px', padding: '16px 20px', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 10px 24px rgba(200, 16, 46, 0.2)', animation: 'flash 1s infinite' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <AlertTriangle style={{ width: '20px', height: '20px', color: 'var(--cd-danger)', animation: 'pulse 2s infinite' }} />
-              <div>
-                <div style={{ fontWeight: '600', color: 'var(--cd-danger)', fontSize: '16px' }}>
+          <div style={{ backgroundColor: 'var(--cd-danger-bg)', border: '1px solid var(--cd-danger-border)', borderRadius: '8px', padding: isMobile ? '12px' : '16px 20px', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 10px 24px rgba(200, 16, 46, 0.2)', animation: 'flash 1s infinite', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0 }}>
+              <AlertTriangle style={{ width: '20px', height: '20px', color: 'var(--cd-danger)', flexShrink: 0, animation: 'pulse 2s infinite' }} />
+              <div style={{ minWidth: 0 }}>
+                <div style={{ fontWeight: '600', color: 'var(--cd-danger)', fontSize: isMobile ? '14px' : '16px' }}>
                   🚨 {panicCount} Active Alert{panicCount > 1 ? 's' : ''}
                 </div>
-                <div style={{ fontSize: '14px', color: 'var(--cd-danger-soft)' }}>
-                  Priority vehicles appear at the top • {isSpeaking ? '🔊 Speaking Now' : 'Ready'}
-                </div>
+                {!isMobile && (
+                  <div style={{ fontSize: '14px', color: 'var(--cd-danger-soft)' }}>
+                    Priority vehicles appear at the top • {isSpeaking ? '🔊 Speaking Now' : 'Ready'}
+                  </div>
+                )}
               </div>
             </div>
             <button
               onClick={toggleAudio}
-              style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', backgroundColor: audioEnabled ? 'var(--cd-danger)' : 'var(--cd-surface-2)', color: audioEnabled ? '#fff' : 'var(--cd-text-muted)', borderRadius: '6px', border: '1px solid var(--cd-danger-border)', cursor: 'pointer', fontSize: '14px', fontWeight: '500' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: isMobile ? '6px 10px' : '8px 16px', backgroundColor: audioEnabled ? 'var(--cd-danger)' : 'var(--cd-surface-2)', color: audioEnabled ? '#fff' : 'var(--cd-text-muted)', borderRadius: '6px', border: '1px solid var(--cd-danger-border)', cursor: 'pointer', fontSize: isMobile ? '12px' : '14px', fontWeight: '500', flexShrink: 0 }}
             >
               <Volume2 style={{ width: '16px', height: '16px' }} />
-              {audioEnabled ? 'Mute Alerts' : 'Enable Voice'}
+              {isMobile ? (audioEnabled ? 'Mute' : 'Unmute') : (audioEnabled ? 'Mute Alerts' : 'Enable Voice')}
             </button>
           </div>
         )}
 
         <div style={{ backgroundColor: 'var(--cd-surface)', borderRadius: '14px', border: '1px solid var(--cd-border)', overflow: 'hidden', boxShadow: 'var(--cd-card-shadow)' }}>
-          <div style={{ padding: '24px', borderBottom: '1px solid var(--cd-border)' }}>
-            <h2 style={{ fontSize: '26px', fontWeight: '600', color: 'var(--cd-text)', marginBottom: '4px', fontFamily: 'var(--cd-font-display)' }}>
+
+          {/* Table Header */}
+          <div style={{ padding: isMobile ? '16px' : '24px', borderBottom: '1px solid var(--cd-border)' }}>
+            <h2 style={{ fontSize: isMobile ? '18px' : '26px', fontWeight: '600', color: 'var(--cd-text)', marginBottom: '4px', fontFamily: 'var(--cd-font-display)' }}>
               Fleet Status ({anomalies.length} vehicles)
             </h2>
-            <p style={{ fontSize: '17px', color: 'var(--cd-text-muted)' }}>
-              Chevron Nigeria fleet — Showing {filteredAnomalies.length === anomalies.length ? `${startIndex + 1}–${Math.min(endIndex, filteredAnomalies.length)} of ${filteredAnomalies.length}` : `${filteredAnomalies.length} of ${anomalies.length}`}
-            </p>
+            
+              <p style={{ fontSize: isMobile ? '14px' : '17px', color: 'var(--cd-text-muted)' }}>
+                Chevron Nigeria fleet — Showing {filteredAnomalies.length === anomalies.length ? `${startIndex + 1}–${Math.min(endIndex, filteredAnomalies.length)} of ${filteredAnomalies.length}` : `${filteredAnomalies.length} of ${anomalies.length}`}
+              </p>
+          
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--cd-text-muted)', fontSize: '13px', marginTop: '10px', paddingLeft: '4px' }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                 <span style={{ width: '8px', height: '8px', borderRadius: '999px', background: isStale ? '#ca8a04' : 'var(--cd-accent)', boxShadow: isStale ? '0 0 0 4px rgba(202,138,4,0.2)' : '0 0 0 4px var(--cd-accent-soft)' }}></span>
-                {isStale ? 'Connection interrupted — reconnecting...' : 'Live telemetry — auto-refresh every 10s'}
+                {isStale ? 'Reconnecting...' : 'Live — auto-refresh every 10s'}
               </span>
             </div>
           </div>
 
-          <div style={{ padding: '16px', borderBottom: '1px solid var(--cd-border)', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-            <div style={{ flex: '1', position: 'relative' }}>
+          {/* Search & Controls */}
+          <div style={{ padding: isMobile ? '12px' : '16px', borderBottom: '1px solid var(--cd-border)', display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+            <div style={{ flex: '1', minWidth: '160px', position: 'relative' }}>
               <Search style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '16px', height: '16px', color: 'var(--cd-text-soft)' }} />
               <input
                 type="text"
-                placeholder="Search by reg no, asset, or transporter..."
+                placeholder={isMobile ? 'Search vehicles...' : 'Search by reg no, asset, or transporter...'}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{ width: '100%', paddingLeft: '40px', paddingRight: '16px', paddingTop: '8px', paddingBottom: '8px', border: '1px solid var(--cd-border)', borderRadius: '10px', fontSize: '14px', outline: 'none', backgroundColor: 'var(--cd-surface-2)', color: 'var(--cd-text)' }}
@@ -313,41 +328,114 @@ export default function FleetAnomalies({ statusFilter, onFilterChange, authFetch
             {statusFilter !== 'All' && (
               <button
                 onClick={() => onFilterChange('All')}
-                style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 14px', borderRadius: '10px', border: '1px solid var(--cd-border)', backgroundColor: 'var(--cd-surface-2)', color: 'var(--cd-text-muted)', cursor: 'pointer', fontSize: '13px' }}
+                style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 12px', borderRadius: '10px', border: '1px solid var(--cd-border)', backgroundColor: 'var(--cd-surface-2)', color: 'var(--cd-text-muted)', cursor: 'pointer', fontSize: '13px', whiteSpace: 'nowrap' }}
               >
-                Clear filter: <strong>{statusFilter}</strong> ✕
+                {isMobile ? `${statusFilter} ✕` : `Clear filter: ${statusFilter} ✕`}
               </button>
             )}
 
             <button
               onClick={handleRefresh}
               disabled={refreshing}
-              style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', border: '1px solid var(--cd-border)', borderRadius: '10px', backgroundColor: refreshing ? 'var(--cd-surface-2)' : 'var(--cd-surface)', cursor: refreshing ? 'not-allowed' : 'pointer', fontSize: '14px', color: refreshing ? 'var(--cd-text-soft)' : 'var(--cd-text)' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 14px', border: '1px solid var(--cd-border)', borderRadius: '10px', backgroundColor: refreshing ? 'var(--cd-surface-2)' : 'var(--cd-surface)', cursor: refreshing ? 'not-allowed' : 'pointer', fontSize: '14px', color: refreshing ? 'var(--cd-text-soft)' : 'var(--cd-text)', whiteSpace: 'nowrap' }}
             >
               {refreshing ? 'Refreshing...' : 'Refresh Now'}
             </button>
             {refreshError && (
-              <div style={{ fontSize: '12px', color: 'var(--cd-danger)' }}>{refreshError}</div>
+              <div style={{ fontSize: '12px', color: 'var(--cd-danger)', width: '100%' }}>{refreshError}</div>
             )}
           </div>
 
-          <div style={{ padding: '24px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr 2.5fr 1.2fr 1.5fr 1.5fr 1.2fr', gap: '16px', padding: '12px 16px', marginBottom: '12px', fontSize: '12px', fontWeight: '500', color: 'var(--cd-text-muted)', textTransform: 'uppercase', borderBottom: '1px solid var(--cd-border)' }}>
-              <div>Reg. No.</div>
-              <div>Transporter</div>
-              <div>Asset Name</div>
-              <div>Status</div>
-              <div>Location</div>
-              <div>Date</div>
-              <div>Action</div>
-            </div>
+          {/* Vehicle List */}
+          <div style={{ padding: isMobile ? '12px' : '24px' }}>
+
+            {/* Desktop table header — hidden on mobile */}
+            {!isMobile && (
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr 2.5fr 1.2fr 1.5fr 1.5fr 1.2fr', gap: '16px', padding: '12px 16px', marginBottom: '12px', fontSize: '12px', fontWeight: '500', color: 'var(--cd-text-muted)', textTransform: 'uppercase', borderBottom: '1px solid var(--cd-border)' }}>
+                <div>Reg. No.</div>
+                <div>Transporter</div>
+                <div>Asset Name</div>
+                <div>Status</div>
+                <div>Location</div>
+                <div>Date</div>
+                <div>Action</div>
+              </div>
+            )}
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {currentPageItems.length === 0 ? (
                 <div style={{ textAlign: 'center', padding: '40px 20px', color: 'var(--cd-text-soft)' }}>
-                  {searchTerm || statusFilter !== 'All' ? 'No vehicles match your search' : 'No vehicles found in data.json'}
+                  {searchTerm || statusFilter !== 'All' ? 'No vehicles match your search' : 'No vehicles found'}
                 </div>
+              ) : isMobile ? (
+                /* ── MOBILE CARD LAYOUT ── */
+                currentPageItems.map((anomaly) => {
+                  const colors = getStatusColor(anomaly.status);
+                  const isPanic = anomaly.panic;
+                  return (
+                    <div
+                      key={anomaly.id}
+                      style={{
+                        padding: '14px',
+                        backgroundColor: isPanic ? 'var(--cd-danger-bg)' : 'var(--cd-surface)',
+                        borderRadius: '10px',
+                        border: `1px solid ${isPanic ? 'var(--cd-danger-border)' : 'var(--cd-border)'}`,
+                        boxShadow: isPanic ? '0 6px 16px rgba(200, 16, 46, 0.28)' : 'var(--cd-soft-shadow)',
+                        position: 'relative',
+                        animation: isPanic ? 'flash 0.8s infinite' : 'none',
+                      }}
+                    >
+                      {isPanic && (
+                        <div style={{ position: 'absolute', top: '-8px', right: '12px', backgroundColor: 'var(--cd-danger)', color: '#fff', width: '24px', height: '24px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold', boxShadow: '0 2px 8px rgba(200, 16, 46, 0.4)', animation: 'pulse 1.5s infinite' }}>
+                          !
+                        </div>
+                      )}
+
+                      {/* Card top row: asset name + status badge */}
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', gap: '8px' }}>
+                        <span style={{ fontSize: '14px', fontWeight: '600', color: isPanic ? 'var(--cd-danger)' : 'var(--cd-text)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                          {anomaly.assetName}
+                        </span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', padding: '3px 10px', borderRadius: '9999px', fontSize: '11px', fontWeight: '500', backgroundColor: colors.bg, color: colors.text, border: `1px solid ${colors.border}`, flexShrink: 0 }}>
+                          <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: colors.text }}></span>
+                          {anomaly.status}
+                        </span>
+                      </div>
+
+                      {/* Location row */}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '6px' }}>
+                        <span style={{ fontSize: '12px', color: isPanic ? 'var(--cd-danger)' : 'var(--cd-text-muted)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '220px' }}>
+                          {(anomaly as any).position?.address || 'Unknown location'}
+                        </span>
+                        {(anomaly as any).position?.latitude && (
+                          <a href={`https://www.google.com/maps?q=${(anomaly as any).position.latitude},${(anomaly as any).position.longitude}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ flexShrink: 0, color: '#0d9488', lineHeight: 1, textDecoration: 'none', fontSize: '14px' }}>
+                            📍
+                          </a>
+                        )}
+                      </div>
+
+                      {/* Bottom row: date + acknowledge */}
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontSize: '11px', color: isPanic ? 'var(--cd-danger)' : 'var(--cd-text-soft)' }}>
+                          {anomaly.date}
+                        </span>
+                        {isPanic && (
+                          <button
+                            onClick={() => handleAcknowledge(anomaly.id)}
+                            style={{ padding: '6px 14px', backgroundColor: 'var(--cd-danger)', color: '#fff', fontSize: '12px', fontWeight: '600', borderRadius: '6px', border: '1px solid var(--cd-danger-border)', cursor: 'pointer' }}
+                          >
+                            ACKNOWLEDGE
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })
               ) : (
+                /* ── DESKTOP TABLE LAYOUT ── */
                 currentPageItems.map((anomaly) => {
                   const colors = getStatusColor(anomaly.status);
                   const isPanic = anomaly.panic;
@@ -411,18 +499,19 @@ export default function FleetAnomalies({ statusFilter, onFilterChange, authFetch
               )}
             </div>
 
+            {/* Pagination */}
             {totalPages > 1 && (
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '24px', paddingTop: '24px', borderTop: '1px solid var(--cd-border)' }}>
                 <div style={{ fontSize: '14px', color: 'var(--cd-text-muted)' }}>
-                  Page {currentPage} of {totalPages}
+                  {isMobile ? `${currentPage}/${totalPages}` : `Page ${currentPage} of ${totalPages}`}
                 </div>
                 <div style={{ display: 'flex', gap: '8px' }}>
-                  <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1} style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '8px 12px', backgroundColor: currentPage === 1 ? 'var(--cd-surface-2)' : 'var(--cd-surface)', border: '1px solid var(--cd-border)', borderRadius: '6px', cursor: currentPage === 1 ? 'not-allowed' : 'pointer', fontSize: '14px', color: currentPage === 1 ? 'var(--cd-text-soft)' : 'var(--cd-text)' }}>
+                  <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1} style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: isMobile ? '8px' : '8px 12px', backgroundColor: currentPage === 1 ? 'var(--cd-surface-2)' : 'var(--cd-surface)', border: '1px solid var(--cd-border)', borderRadius: '6px', cursor: currentPage === 1 ? 'not-allowed' : 'pointer', fontSize: '14px', color: currentPage === 1 ? 'var(--cd-text-soft)' : 'var(--cd-text)' }}>
                     <ChevronLeft style={{ width: '16px', height: '16px' }} />
-                    Previous
+                    {!isMobile && 'Previous'}
                   </button>
-                  <button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages} style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '8px 12px', backgroundColor: currentPage === totalPages ? 'var(--cd-surface-2)' : 'var(--cd-surface)', border: '1px solid var(--cd-border)', borderRadius: '6px', cursor: currentPage === totalPages ? 'not-allowed' : 'pointer', fontSize: '14px', color: currentPage === totalPages ? 'var(--cd-text-soft)' : 'var(--cd-text)' }}>
-                    Next
+                  <button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages} style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: isMobile ? '8px' : '8px 12px', backgroundColor: currentPage === totalPages ? 'var(--cd-surface-2)' : 'var(--cd-surface)', border: '1px solid var(--cd-border)', borderRadius: '6px', cursor: currentPage === totalPages ? 'not-allowed' : 'pointer', fontSize: '14px', color: currentPage === totalPages ? 'var(--cd-text-soft)' : 'var(--cd-text)' }}>
+                    {!isMobile && 'Next'}
                     <ChevronRight style={{ width: '16px', height: '16px' }} />
                   </button>
                 </div>

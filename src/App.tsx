@@ -1,7 +1,6 @@
 import { SignedIn, SignedOut, SignIn, useClerk } from "@clerk/clerk-react";
 import { useEffect, useState } from 'react';
 import { Moon, Sun, Power, RotateCcw } from 'lucide-react';
-//import { Bell, Settings, Moon, Sun, Power, RotateCcw } from 'lucide-react';
 import AnomaliesTable from './components/AnomaliesTable';
 
 type StatusFilter = 'All' | 'Moving' | 'Idle' | 'Stationary' | 'Parked' | 'Inactive' | 'Offline';
@@ -68,22 +67,31 @@ function DashboardContent() {
     document.documentElement.dataset.theme = nextTheme;
   }, []);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+  return () => window.removeEventListener('resize', checkMobile);
+}, []);
+
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem('cd-theme', theme);
   }, [theme]);
 
   const loadMetadata = async () => {
-  try {
-    const res = await authFetch('/api/metadata');
-    if (res.ok) {
-      const data = await res.json();
-      setMetadata(data);
+    try {
+      const res = await authFetch('/api/metadata');
+      if (res.ok) {
+        const data = await res.json();
+        setMetadata(data);
+      }
+    } catch {
+      // ignore
     }
-  } catch {
-    // ignore
-  }
-};
+  };
 
   useEffect(() => {
     loadMetadata();
@@ -115,7 +123,7 @@ function DashboardContent() {
 
   return (
     <div className="fleet-page min-h-screen">
-      <div className="fleet-shell p-8">
+      <div className="fleet-shell cd-shell-padding">
         <div className="max-w-7xl mx-auto">
 
           {/* Logout Confirmation Modal */}
@@ -172,14 +180,14 @@ function DashboardContent() {
           )}
 
           {/* Header */}
-          <div className="flex items-start justify-between mb-8">
+          <div className="cd-header mb-8">
             <div className="flex items-center gap-4">
               <div className="h-6 w-6 flex-shrink-0 flex items-center justify-center">
-                <img src="/cnl-logo.png" alt="CNL Logo" />
+                <img src="/cnl-logo.png" alt="CNL Logo" className="cd-logo" />
               </div>
               <div>
-                <h1 className="text-gray-900 mb-1" style={{ color: 'var(--cd-text)' }}>CNL Dashboard</h1>
-                <p className="text-gray-600" style={{ color: 'var(--cd-text-muted)' }}>
+                <h1 className="cd-title text-gray-900 mb-1" style={{ color: 'var(--cd-text)' }}>CNL Dashboard</h1>
+                <p className="cd-subtitle text-gray-600" style={{ color: 'var(--cd-text-muted)' }}>
                   Track and manage your team, fleet and operations.
                 </p>
               </div>
@@ -193,14 +201,6 @@ function DashboardContent() {
               >
                 {theme === 'dark' ? <Sun className="w-5 h-5 text-gray-600" /> : <Moon className="w-5 h-5 text-gray-600" />}
               </button>
-
-             {/* <button className="cd-iconbtn p-2 rounded-lg transition-colors">
-                <Bell className="w-5 h-5 text-gray-600" />
-              </button>
-
-              <button className="cd-iconbtn p-2 rounded-lg transition-colors">
-                <Settings className="w-5 h-5 text-gray-600" />
-              </button> */}
 
               <button
                 className="cd-iconbtn p-2 rounded-lg transition-colors"
@@ -222,66 +222,57 @@ function DashboardContent() {
           </div>
 
           {/* Fleet Stats Card */}
-          <div style={{
+          <div className="cd-stats-wrapper" style={{
             background: cardBg,
             borderRadius: '14px',
             border: `1px solid ${cardBorder}`,
-            padding: '20px 24px',
             boxShadow: 'var(--cd-card-shadow)',
-            display: 'flex',
-            gap: '8px',
-            flexWrap: 'wrap',
-            alignItems: 'stretch',
-            marginBottom: '24px',
+            marginBottom: isMobile ? '12px' : '24px',
           }}>
-            {statConfig.map(stat => {
-              const value = metadata[stat.key];
-              const isActive = stat.key === 'panic'
-                ? false
-                : (stat.filter === 'All' ? statusFilter === 'All' : statusFilter === stat.filter);
-              const isPanic = stat.key === 'panic';
+            <div className="cd-stats-scroll">
+              {statConfig.map(stat => {
+                const value = metadata[stat.key];
+                const isActive = stat.key === 'panic'
+                  ? false
+                  : (stat.filter === 'All' ? statusFilter === 'All' : statusFilter === stat.filter);
+                const isPanic = stat.key === 'panic';
 
-              return (
-                <button
-                  key={stat.key}
-                  onClick={() => handleStatClick(stat.filter, stat.key)}
-                  title={stat.tooltip}
-                  style={{
-                    flex: '1',
-                    minWidth: '80px',
-                    padding: '16px 12px',
-                    borderRadius: '10px',
-                    border: `1px solid ${isActive ? stat.color : (isDark ? 'var(--cd-border)' : stat.border)}`,
-                    backgroundColor: isActive ? (isDark ? 'var(--cd-surface-2)' : stat.bg) : (isDark ? 'var(--cd-surface-2)' : '#fff'),
-                    cursor: isPanic ? 'default' : 'pointer',
-                    textAlign: 'center',
-                    transition: 'all 0.2s ease',
-                    outline: 'none',
-                    boxShadow: isActive ? `0 0 0 2px ${stat.color}33` : 'none',
-                  }}
-                >
-                  <div style={{
-                    fontSize: '28px',
-                    fontWeight: '700',
-                    color: stat.color,
-                    lineHeight: 1,
-                    animation: isPanic && value > 0 ? 'pulse 1.5s infinite' : 'none',
-                  }}>
-                    {value}
-                  </div>
-                  <div style={{
-                    fontSize: '11px',
-                    color: isDark ? 'var(--cd-text-muted)' : '#64748b',
-                    marginTop: '6px',
-                    fontWeight: '600',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
-                  }}>
-                    {stat.label}
-                  </div>
-                </button>
-              );
-            })}
+                return (
+                  <button
+                    key={stat.key}
+                    onClick={() => handleStatClick(stat.filter, stat.key)}
+                    title={stat.tooltip}
+                    className="cd-stat-btn"
+                    style={{
+                      border: `1px solid ${isActive ? stat.color : (isDark ? 'var(--cd-border)' : stat.border)}`,
+                      backgroundColor: isActive ? (isDark ? 'var(--cd-surface-2)' : stat.bg) : (isDark ? 'var(--cd-surface-2)' : '#fff'),
+                      cursor: isPanic ? 'default' : 'pointer',
+                      boxShadow: isActive ? `0 0 0 2px ${stat.color}33` : 'none',
+                    }}
+                  >
+                    <div style={{
+                      fontSize: '28px',
+                      fontWeight: '700',
+                      color: stat.color,
+                      lineHeight: 1,
+                      animation: isPanic && value > 0 ? 'pulse 1.5s infinite' : 'none',
+                    }}>
+                      {value}
+                    </div>
+                    <div style={{
+                      fontSize: '11px',
+                      color: isDark ? 'var(--cd-text-muted)' : '#64748b',
+                      marginTop: '6px',
+                      fontWeight: '600',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                    }}>
+                      {stat.label}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Anomalies Table */}

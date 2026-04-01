@@ -58,7 +58,7 @@ export default function FleetAnomalies({ statusFilter, onFilterChange, authFetch
 
   const loadData = async (active?: { current: boolean }) => {
     try {
-      const res = await fetch('/data.json', { cache: 'no-store' });
+      const res = await authFetch('/api/data');
       if (!res.ok) throw new Error('Failed to load data.json');
       const data = (await res.json()) as Anomaly[];
       if (active && !active.current) return;
@@ -80,7 +80,7 @@ export default function FleetAnomalies({ statusFilter, onFilterChange, authFetch
   useEffect(() => {
     const checkStale = async () => {
       try {
-        const res = await fetch('/metadata.json', { cache: 'no-store' });
+        const res = await authFetch('/api/metadata');
         if (res.ok) {
           const data = await res.json();
           if (data.lastUpdate) {

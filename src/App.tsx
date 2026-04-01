@@ -74,16 +74,16 @@ function DashboardContent() {
   }, [theme]);
 
   const loadMetadata = async () => {
-    try {
-      const res = await fetch('/metadata.json', { cache: 'no-store' });
-      if (res.ok) {
-        const data = await res.json();
-        setMetadata(data);
-      }
-    } catch {
-      // ignore
+  try {
+    const res = await authFetch('/api/metadata');
+    if (res.ok) {
+      const data = await res.json();
+      setMetadata(data);
     }
-  };
+  } catch {
+    // ignore
+  }
+};
 
   useEffect(() => {
     loadMetadata();

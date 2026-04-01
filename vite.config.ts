@@ -82,7 +82,6 @@ export default defineConfig({
             return
           }
 
-          // Save new acknowledged ID
           if (req.method === 'POST') {
             let body = ''
             req.on('data', (chunk: Buffer) => { body += chunk.toString() })
@@ -125,6 +124,52 @@ export default defineConfig({
           saveAcknowledged([])
           res.setHeader('Content-Type', 'application/json')
           res.end(JSON.stringify({ ok: true }))
+        })
+
+        // Data endpoint
+        server.middlewares.use('/api/data', async (req, res) => {
+          if (!isAuthorized(req)) {
+            res.statusCode = 401
+            res.end('Unauthorized')
+            return
+          }
+          if (req.method !== 'GET') {
+            res.statusCode = 405
+            res.end('Method Not Allowed')
+            return
+          }
+          try {
+            const dataPath = path.join(process.cwd(), 'public', 'data.json')
+            const data = fs.readFileSync(dataPath, 'utf8')
+            res.setHeader('Content-Type', 'application/json')
+            res.end(data)
+          } catch {
+            res.statusCode = 404
+            res.end('Not Found')
+          }
+        })
+
+        // Metadata endpoint
+        server.middlewares.use('/api/metadata', async (req, res) => {
+          if (!isAuthorized(req)) {
+            res.statusCode = 401
+            res.end('Unauthorized')
+            return
+          }
+          if (req.method !== 'GET') {
+            res.statusCode = 405
+            res.end('Method Not Allowed')
+            return
+          }
+          try {
+            const metadataPath = path.join(process.cwd(), 'public', 'metadata.json')
+            const data = fs.readFileSync(metadataPath, 'utf8')
+            res.setHeader('Content-Type', 'application/json')
+            res.end(data)
+          } catch {
+            res.statusCode = 404
+            res.end('Not Found')
+          }
         })
       },
     },

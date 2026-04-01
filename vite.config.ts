@@ -32,10 +32,6 @@ let pollingStarted = false
 export default defineConfig({
   server: {
     host: true,
-    allowedHosts: ['drema-heterologous-crysta.ngrok-free.dev'],
-    headers: {
-      'ngrok-skip-browser-warning': 'true',
-    },
     watch: {
       ignored: ['**/scripts/mix-test.js', '**/public/data.json', '**/public/metadata.json', '**/public/acknowledged.json'],
     },

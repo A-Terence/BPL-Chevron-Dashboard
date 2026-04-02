@@ -57,3 +57,6 @@ panic-alerts.json
 raw-events.json
 since-token.txt
 metadata.json 
+
+#new
+panic.log

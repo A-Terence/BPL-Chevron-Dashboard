@@ -289,6 +289,18 @@ async function getLatestActiveEvents(token) {
     panicEvents.forEach(e => {
       console.log(`🔎 Active Panic - AssetId: ${e.AssetId} | EventTime: ${e.EventDateTime} | ReceivedAt: ${e.ReceivedDateTime}`);
     });
+    const logPath = path.join(process.cwd(), 'panic.log');
+    const logEntries = panicEvents.map(e => JSON.stringify({
+    timestamp: new Date().toISOString(),
+    assetId: e.AssetId,
+    eventId: e.EventId,
+    eventTime: e.EventDateTime,
+    receivedAt: e.ReceivedDateTime,
+    rawEvent: e
+  })).join('\n') + '\n';
+
+  fs.appendFileSync(logPath, logEntries);
+  console.log(`📝 Panic logged to panic.log`);
   }
 
   return parsed;
